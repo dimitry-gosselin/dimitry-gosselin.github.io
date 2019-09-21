@@ -64,8 +64,9 @@
     html = "";
     copy = "";
     for (var i = 0; i < 3; i++) {
-      copy+= combat[Math.floor(Math.random()*combat.length)]+" ("+level[Math.floor(Math.random()*level.length)]+") \n";
-      html += copy +"<br>";
+      fight = combat[Math.floor(Math.random()*combat.length)]+" ("+level[Math.floor(Math.random()*level.length)]+")"
+      copy+= fight+" \n";
+      html += fight +"<br>";
     }
      $(".match_panel").html(html);
      $(".copy_textarea").val(copy);
