@@ -12,7 +12,6 @@
       <button class="generate" style="font-size: 4vw !important;">Générer des matchs</button>  
       <button class="copy" style="font-size: 4vw !important;">Copier les matchs</button>  
     </div>
-  <textarea class="copy_textarea" style="margin: 0px;width: 467px;height: 298px;position: absolute;left: -1000px;"></textarea>
     <div class="match_panel">
       
     </div>
@@ -68,14 +67,17 @@
       copy+= fight+" \n";
       html += fight +"<br>";
     }
-     $(".match_panel").html(copy);
+     $(".match_panel").html(html);
      $(".copy_textarea").val(copy);
     });
     
     
     $(".copy").click(function(){
-     $(".copy_textarea").select();
+      $("body").append('<textarea class="copy_textarea" style="margin: 0px;width: 467px;height: 298px;position: absolute;left: -1000px;"></textarea>');
+      $(".copy_textarea").html($(".match_panel").html().replace( /<br\s*[\/]?>/gi, '\n'));
+      $(".copy_textarea").select();
      document.execCommand( 'copy' );
+      $(".copy_textarea").remove();
     });
   </script>
   
