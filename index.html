@@ -13,6 +13,7 @@
       <button class="generate">Générer des matchs</button>  
       <button class="copy">Copier des matchs</button>  
     </div>
+  <textarea class="copy_textarea" style="margin: 0px;width: 467px;height: 298px;position: absolute;left: -1000px;"></textarea>
     <div class="match_panel">
       
     </div>
@@ -61,10 +62,19 @@
         ];
       
     html = "";
+    copy = "";
     for (var i = 0; i < 3; i++) {
       html += combat[Math.floor(Math.random()*combat.length)]+" ("+level[Math.floor(Math.random()*level.length)]+") <br/>";
+      copy+= combat[Math.floor(Math.random()*combat.length)]+" ("+level[Math.floor(Math.random()*level.length)]+") ";
     }
      $(".match_panel").html(html);
+     $(".copy_textarea").val(copy);
+    });
+    
+    
+    $(".copy").click(function(){
+     $(".copy_textarea").select();
+     document.execCommand( 'copy' );
     });
   </script>
   
