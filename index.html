@@ -1,6 +1,9 @@
 <html>
   <head>
-    
+    <script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
   </head>
   <body>
     
@@ -16,7 +19,53 @@
   
   
   <script>
-    console.log($(".generate"));
+    $(".generate").click(function(){
+      combat = [
+        "Combat de shiny",
+"Combat de starter",
+"Combat de pokemon mignon",
+"Combat de pokemon avec une ou plusieurs queue",
+"Combat de bébé ",
+"Combat de ratata / ratatac",
+"Combat de légendaire ",
+"Combat de pokemon rose",
+"Combat de pokemon noir",
+"Combat de pokemon blanc",
+"Combat d'evoli",
+"Combat de régionaux ",
+"Combat de pokemon de 1er génération ",
+"Combat de pokémon de 2nd génération ",
+"Combat de pokemon de 3em générations ",
+"Combat de pokemon de 4el générations ",
+"Combat d'oiseau ",
+"Combat de poisson ",
+"Combat de pokemon male",
+"Combat de pokemon femmes ",
+"Combat de pokemon anthropomorphe",
+"Combat de pokemon < 500pc",
+"Combat de pokemon > 4000pc",
+"Combat de pokemon moche",
+"Combat de pokemon attraper dans la journée ",
+"Combat de pokemon halola",
+"Combat à 4 pattes",
+"Combat de Personne touche le sol !",
+"Combat de bêtes à cornes",
+"Combat de pokemon echangiste(é) ",
+"Combat de Pokémon verts",
+"Combat de Pokémon objet (pas originaire d'un animal quoi)"
+       ];
+      level = [
+        "Petite ligue",
+        "Moyenne ligue",
+        "Grande ligue"
+        ];
+      Math.floor(Math.random()*tab.length)
+    html = "";
+    for (var i = 0; i < 3; i++) {
+      html += combat[Math.floor(Math.random()*combat.length)]+" ("+level[Math.floor(Math.random()*level.length)]+") <br/>";
+    }
+     $(".match_panel").html(html);
+    });
   </script>
   
   
